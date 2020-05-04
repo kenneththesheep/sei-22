@@ -42,8 +42,11 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 	
 </ol>
 
-Creation of pdf
-   console.log(data.studentname);
+let individualStudentReport = (data, callback) => {
+    console.log("%%%%%%%%%%%%%%%%%%%%%%Conduct%%%%%%%%%%%%%%%%%%%%%%%%");
+    console.log(data);
+    // create a document and pipe to a blob
+    console.log(data.studentname);
     let nameFile = data.studentname.substring(6);
     nameFile = nameFile.replace(/\s/g, '_');
     console.log(nameFile);
@@ -52,6 +55,7 @@ let downloadDirectory = downloadsFolder();
 var stream = doc.pipe(fs.createWriteStream(downloadDirectory +'/'+ nameFile +'_individualReport.pdf'));
 console.log(data.stuentclass);
 console.log(downloadDirectory);
+
 doc
   .text('', 180, 30)
   .font('Times-Roman', 30)
@@ -65,11 +69,14 @@ doc
     height: 300,
     ellipsis: true
   });
+
+
   doc
    .font('Times-Roman', 20)
   .text(data.studentname, 30, 90)
   .font('Times-Roman', 20)
   .moveDown();
+
  doc
   .text(data.stuentclass, 30, 120)
   .font('Times-Bold', 20);
@@ -109,7 +116,132 @@ doc
     .text("signature", 200, 690)
     .text("Parent/Guardian's ", 390, 670)
     .text("signature", 390, 690);
-} ..........
+} else
+if(data.sa1.length===3)
+{
+doc
+    .text("Subject Name", 30, 170)
+    .text("SA1", 200, 170)
+    .text("SA2", 290, 170)
+    .text("Overall", 390, 170)
+    .font('Times-Roman', 20)
+    .text(data.subjectName[0], 30, 220)
+    .text(data.sa1[0], 200, 220)
+    .text(data.sa2[0], 290, 220)
+    .text(data.overall[0], 390, 220)
+    .text(data.subjectName[1], 30, 270)
+    .text(data.sa1[1], 200, 270)
+    .text(data.sa2[1], 290, 270)
+    .text(data.overall[1], 390, 270)
+    .text(data.subjectName[2], 30, 320)
+    .text(data.sa1[2], 200, 320)
+    .text(data.sa2[2], 290, 320)
+    .text(data.overall[2], 390, 320)
+    .text(data.overallPercent, 30, 430)
+    .text(data.passStatus, 30, 480)
+    .text(data.promotionStatus, 270, 480)
+    .text(data.conductgrade, 30, 530)
+    .text(data.remark, 30, 580)
+    .text("V/Principal's", 30, 670)
+    .text("signature", 30, 690)
+    .text("Teacher's ", 200, 670)
+    .text("signature", 200, 690)
+    .text("Parent/Guardian's ", 390, 670)
+    .text("signature", 390, 690);
+} else
+if(data.sa1.length===2)
+{
+doc
+    .text("Subject Name", 30, 170)
+    .text("SA1", 200, 170)
+    .text("SA2", 290, 170)
+    .text("Overall", 390, 170)
+    .font('Times-Roman', 20)
+    .text(data.subjectName[0], 30, 220)
+    .text(data.sa1[0], 200, 220)
+    .text(data.sa2[0], 290, 220)
+    .text(data.overall[0], 390, 220)
+    .text(data.subjectName[1], 30, 270)
+    .text(data.sa1[1], 200, 270)
+    .text(data.sa2[1], 290, 270)
+    .text(data.overall[1], 390, 270)
+    .text(data.overallPercent, 30, 430)
+    .text(data.passStatus, 30, 480)
+    .text(data.promotionStatus, 270, 480)
+    .text(data.conductgrade, 30, 530)
+    .text(data.remark, 30, 580)
+    .text("V/Principal's", 30, 670)
+    .text("signature", 30, 690)
+    .text("Teacher's ", 200, 670)
+    .text("signature", 200, 690)
+    .text("Parent/Guardian's ", 390, 670)
+    .text("signature", 390, 690);
+} else
+if(data.sa1.length===1)
+{
+doc
+    .text("Subject Name", 30, 170)
+    .text("SA1", 200, 170)
+    .text("SA2", 290, 170)
+    .text("Overall", 390, 170)
+    .font('Times-Roman', 20)
+    .text(data.subjectName[0], 30, 220)
+    .text(data.sa1[0], 200, 220)
+    .text(data.sa2[0], 290, 220)
+    .text(data.overall[0], 390, 220)
+    .text(data.subjectName[1], 30, 270)
+    .text(data.overallPercent, 30, 430)
+    .text(data.passStatus, 30, 480)
+    .text(data.promotionStatus, 270, 480)
+    .text(data.conductgrade, 30, 530)
+    .text(data.remark, 30, 580)
+    .text("V/Principal's", 30, 670)
+    .text("signature", 30, 690)
+    .text("Teacher's ", 200, 670)
+    .text("signature", 200, 690)
+    .text("Parent/Guardian's ", 390, 670)
+    .text("signature", 390, 690);
+}
+
+doc
+    .moveTo(20, 200)
+    .lineTo(470, 200)
+    .stroke();
+
+doc
+    .moveTo(190, 160)
+    .lineTo(190, 400)
+    .stroke();
+
+doc
+    .moveTo(280, 160)
+    .lineTo(280, 400)
+    .stroke();
+
+doc
+    .moveTo(380, 160)
+    .lineTo(380, 400)
+    .stroke();
+
+doc
+    .moveTo(20, 660)
+    .lineTo(150, 660)
+    .stroke();
+
+doc
+    .moveTo(190, 660)
+    .lineTo(320, 660)
+    .stroke();
+
+doc
+    .moveTo(380, 660)
+    .lineTo(530, 660)
+    .stroke();
+
+doc.end();
+callback(null, "Created pdf in download folder");
+
+  };
 1. What in my code and program design in the project went well? Is there anything I would do the same next time?
 <ol>
 	<li>I don't know how but I linked more than 2 tables, especially towards the second half of the assignment. What became tough initially became an essential tool to complete many of the task ahead</li>
