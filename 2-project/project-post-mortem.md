@@ -37,9 +37,9 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 <ol>
 	<li>I need a more effective way to deal with the creation of pdf</li>
 
-
-	<li>AJAX/DOM gave me hell when it came to the structuring, especially where to place div and form in the correct position. </li>
-	<li>I really hope to find a way to be able to store fswrite files to remote server and allow user to download.</li>
+<li>AJAX/DOM gave me hell when it came to the structuring, especially where to place div and form in the correct position. </li>
+	<li>I really hope to find a way to be able to store fswrite files to remote server and allow user to download. </li>
+	
 </ol>
 
 Creation of pdf
