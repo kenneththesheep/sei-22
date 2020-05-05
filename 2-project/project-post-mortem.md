@@ -19,7 +19,7 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 
 1. What in my process and approach to this project would I do differently next time?
 <ol>
-	<li>Definitely, I have more foresight and put more connection and thoughts to the erd. It was to nearing the result portion that I realise having another id connection helps in easing the process of the result management</li>
+	<li>Definitely, I should have more foresight and put more connection and thoughts to the erd. It was to nearing the result portion that I realise having another id connection helps in easing the process of the result management</li>
 	<li>I felt I have taken on a behemoth task which grew from what looks so simple into a major 6 days LOTR major war. Really need to be more wary and think carefully before committing the idea to task.</li>
 	<li>I went bashing in, and kinda lost stamina towards the end. Need to really pace myself properly.</li>
 </ol>
